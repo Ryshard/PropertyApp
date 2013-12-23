@@ -1,5 +1,5 @@
 <?php 
-
+defined('MY_APP') or die('You should not be here');
 require_once('Smarty.class.php');
 
 class Smarty_Movies extends Smarty {
@@ -19,7 +19,7 @@ class Smarty_Movies extends Smarty {
        // $this->setCacheDir(APPLICATION_PATH . '/views/smarty/cache/');
 
        // $this->caching = Smarty::CACHING_LIFETIME_CURRENT;
-        $this->assign('app_name', 'DSA Movies');
+        $this->assign('app_name', 'Property App');
         $this->assign('urlAction', 'http://localhost/PropertyApp/index.php?action');
         
         //echo print_r($this->getTemplateDir());

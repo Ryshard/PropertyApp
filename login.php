@@ -3,7 +3,7 @@ session_start();
    // Define path to application directory
     defined('APPLICATION_PATH')
         || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application'));
-     
+   define('MY_APP', 'whatever');  
  require_once(APPLICATION_PATH .'/config/common.inc.php');
  require_once('FormLogin.php');
  
@@ -29,7 +29,7 @@ session_start();
        
        if (sizeof($rows) == 1) {
            
-          echo "user found";
+       //   echo "user found";
            $_SESSION['loggedIn']=1;
            $_SESSION['user']=$rows[0]['username'];
            header("location: index.php");

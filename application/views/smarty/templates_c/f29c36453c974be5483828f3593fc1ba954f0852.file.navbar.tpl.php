@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:12:32
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 18:30:48
          compiled from "C:\Dropbox\htdocs\PropertyApp\application\views\smarty\templates\navbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:974352b784e73b0ad3-13629878%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f29c36453c974be5483828f3593fc1ba954f0852' => 
     array (
       0 => 'C:\\Dropbox\\htdocs\\PropertyApp\\application\\views\\smarty\\templates\\navbar.tpl',
-      1 => 1387814470,
+      1 => 1387818802,
       2 => 'file',
     ),
   ),
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="index.php"">Home</a></li>
             <li><a href="<?php echo $_smarty_tpl->tpl_vars['urlAction']->value;?>
 =about">About</a></li>
   

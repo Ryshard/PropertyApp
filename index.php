@@ -4,20 +4,13 @@ session_start();
     defined('APPLICATION_PATH')
         || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application'));
   
-
+define('MY_APP', 'whatever');
  require_once(APPLICATION_PATH .'/config/common.inc.php');
        
-    // $dbTable = new Zend_Db_Table('movie');
-    // $rows = $dbTable->fetchAll();
-     
-   //  foreach($rows as $row) {
-         
-        // print_r($row->toArray());
-         
-   //  }
+   
     $date = date('Y-m-d');
  
-   // die(get_include_path());
+   
     set_include_path(APPLICATION_PATH. "/models" . PATH_SEPARATOR . get_include_path());
      
      
@@ -29,10 +22,9 @@ session_start();
       
       
     $smarty = new Smarty_Movies();
-    
-     
+         
     $smarty->assign('name','Property App');
-$smarty->assign('date', $date);
+    $smarty->assign('date', $date);
     
     $smarty->assign('loggedIn',false);
     $loggedIn = false;
@@ -42,10 +34,10 @@ $smarty->assign('date', $date);
      $loggedIn=true;
     }
     
-   // $smarty->assign('page','page1');
+
        
     $pageAction = isset($_GET['action']) ? $_GET['action'] : 'home';
-   //die($pageAction);
+   
     switch($pageAction) {
         
         case 'addProperty':
@@ -73,8 +65,7 @@ $smarty->assign('date', $date);
             //die('loading here $pageAction');
             
             $record_id = $_GET['id'];
-            //$dbTable = new Zend_Db_Table('properties');
-           //$row = $dbTable->fetchRow('property_id = ' . $record_id);
+            
              $sql = ' ';
               $sql.= 'SELECT * From properties ';
               $sql.= ' INNER JOIN properties_x_sold ';
@@ -91,10 +82,10 @@ $smarty->assign('date', $date);
         
            case 'proplist':
                  $search = array();
-               if (!empty($_SESSION['search']['county']))
-               $search['county'] = $_SESSION['search']['county'];
-               else 
-               $search['county'] = "";
+                 if (!empty($_SESSION['search']['county']))
+                 $search['county'] = $_SESSION['search']['county'];
+                 else 
+                 $search['county'] = "";
                
                  if (!empty($_SESSION['search']['bedrooms']))
                  $search['bedrooms'] = $_SESSION['search']['bedrooms'];
@@ -134,25 +125,28 @@ $smarty->assign('date', $date);
               $sql.= 'SELECT * From properties ';
               $sql.= ' INNER JOIN properties_x_sold ';
               $sql.= ' ON properties.property_id = properties_x_sold.property_id ';
-        $stmt = $db->query($sql);
-        $rows = $stmt->fetchAll();
+        
+              $stmt = $db->query($sql);
+              $rows = $stmt->fetchAll();
                 
                 $smarty->assign('rows',$rows);
                 $smarty->assign('page','proplist_admin.tpl');
-                 $smarty->assign('uploads', IMG_SRC);
+                $smarty->assign('uploads', IMG_SRC);
                 $smarty->assign('pageTitle','Property Listing | Admin');
              break;
+         
+         
        
            case 'delete':
             //die('loading here $pageAction');
             $prop_id = $_GET['id'];
-               $smarty->assign('id', $prop_id);
+            $smarty->assign('id', $prop_id);
             $smarty->assign('page','delete.tpl');
             $smarty->assign('pageTitle','Delete Property');
              break;
         
          
-                 case 'about':
+             case 'about':
             //die('loading here $pageAction');
            
             $smarty->assign('page','about.tpl');
@@ -171,8 +165,8 @@ $smarty->assign('date', $date);
            $message = "Well Hello, ".$persona;
            $smarty->assign('message',$message);
            
-         $smarty->assign('page','index.tpl');
-         $smarty->assign('pageTitle','Property App Home Page');
+           $smarty->assign('page','index.tpl');
+           $smarty->assign('pageTitle','Property App Home Page');
             
             break;
         

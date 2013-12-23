@@ -1,6 +1,7 @@
 <?php
 session_start();
    // Define path to application directory
+define('MY_APP', 'whatever');
     defined('APPLICATION_PATH')
         || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application'));
      
