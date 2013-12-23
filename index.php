@@ -151,6 +151,14 @@ $smarty->assign('date', $date);
             $smarty->assign('pageTitle','Delete Property');
              break;
         
+         
+                 case 'about':
+            //die('loading here $pageAction');
+           
+            $smarty->assign('page','about.tpl');
+            $smarty->assign('pageTitle','About Property App');
+             break;
+         
         
         default:
            

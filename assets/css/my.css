@@ -21,3 +21,17 @@ body {
 .green {
     color: green;
 }
+
+#brief {
+    text-align: justify;
+}
+
+#git {
+    border: dotted 2px #006699;
+    border-radius: 5px;
+    padding: 5px;
+}
+#top {
+ font-family: "Trebuchet MS", Helvetica, sans-serif;
+ font-size: 1.1em;
+}
